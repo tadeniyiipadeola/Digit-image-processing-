@@ -19,8 +19,4 @@ def image_shape():
    
 def create_black_image():
    black_image = np.zero((300,300), np.uint8)
-   return black_image
-
-def create_white_image():
-   white_image = np.zero((100, 100)), np.unit8
-   return white_image
+   
