@@ -31,7 +31,7 @@ def load_display(image):
    # cv2.destroyWindow("Test")
 
 def sliceimage():
-   sliceBMW = cv2.imread('BMW.jpg')
+   sliceBMW = cv2.imread('BMW X5.jpg')
    load_display(sliceBMW)
    bmw_shape = sliceBMW.shape
    print(bmw_shape)
