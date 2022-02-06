@@ -1,26 +1,38 @@
-import numpy as np
 import cv2
+import numpy as np
+
 
 img = cv2.imread("BMW.jpg")
-
+img2 = cv2.imread("BMW X5.jpg")
 cv2.namedWindow('img', cv2.WINDOW_AUTOSIZE)
-
 cv2.imshow("img", img)
-
-cv2.waitKey(10)
- 
- 
-cv2.destroyAllWindows()
+cv2.imshow("img2", img2)
+cv2.waitKey(0)
+# cv2.destroyAllWindows("img")
+# cv2.destroyAllWindows("img2")
 
 
 def image_shape():
-   img = cv2.imread('BNW>jpg')
-   print("The size of the image is ",img.shape)
+   img = cv2.imread('BNW.jpg')
+   print("The size of the image is ", img.shape)
    
 def create_black_image():
-   black_image = np.zero((300,300), np.uint8)
+   black_image = np.zeros((300,300), np.uint8)
    return black_image
 
 def create_white_image():
-   white_image = np.zero((100, 100)), np.unit8
+   white_image = np.zeros((300, 300), np.uint8)*255
    return white_image
+
+def load_display(image):
+   cv2.namedWindow("Test", cv2.WINDOW_AUTOSIZE)
+   cv2.imshow("Test", image)
+   cv2.waitKey(0)
+   # cv2.destroyWindow("Test")
+
+if __name__ == "__main__":
+   white_image = create_white_image()
+   load_display(white_image)
+
+   black_image = create_black_image()
+   load_display(black_image)
