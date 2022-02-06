@@ -30,9 +30,20 @@ def load_display(image):
    cv2.waitKey(0)
    # cv2.destroyWindow("Test")
 
-if __name__ == "__main__":
-   white_image = create_white_image()
-   load_display(white_image)
+def sliceimage():
+   sliceBMW = cv2.imread('BMW.jpg')
+   load_display(sliceBMW)
+   bmw_shape = sliceBMW.shape
+   print(bmw_shape)
+   half = bmw_shape[1]//2
+   print(half)
+   front = sliceBMW[0:543, 0:407]
+   load_display(front)
 
-   black_image = create_black_image()
-   load_display(black_image)
+if __name__ == "__main__":
+   # white_image = create_white_image()
+   # load_display(white_image)
+
+   # black_image = create_black_image()
+   # load_display(black_image)
+   sliceimage()
