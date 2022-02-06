@@ -21,7 +21,7 @@ def create_black_image():
    return black_image
 
 def create_white_image():
-   white_image = np.zeros((300, 300), np.uint8)*255
+   white_image = np.ones((300, 300), np.uint8)*255
    return white_image
 
 def load_display(image):
