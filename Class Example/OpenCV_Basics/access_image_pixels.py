@@ -1,6 +1,12 @@
 import cv2
-from create_image import load_display
+# from create_image import load_display
 import numpy as np
+
+def load_display(image):
+    cv2.namedWindow("Test", cv2.WINDOW_AUTOSIZE)
+    cv2.imshow("Test", image)
+    cv2.waitKey(0)
+
 
 def create_white_box_black_background():
     box = np.zeros((100, 100), np.uint8)
@@ -31,9 +37,8 @@ def change_image_brightness(image, parameter):
             if adjusted < 0:
                 adjusted = 0
             output_image[row, col] = np.uint8(adjusted)
-
+    load_display(output_image)
     return output_image
-
 
 def invert_image(image):
     output_image = image.copy()
@@ -44,8 +49,7 @@ def invert_image(image):
 
     return output_image
 
-
-lenna = cv2.imread("Lenna.png", 0)
-load_display(invert_image(lenna))
-roi_image()
-load_display(create_white_box_black_background())
+if __name__ == '__main__':
+    kenny_dark = cv2.imread("Lenna.png")
+    # bright_ex = change_image_brightness(kenny_dark, 20)
+    load_display(kenny_dark)

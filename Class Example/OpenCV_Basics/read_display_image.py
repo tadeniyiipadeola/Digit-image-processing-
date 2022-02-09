@@ -25,7 +25,7 @@ def image_shape():
     lenna = cv2.imread("Lenna.png", 0)
 
     #gets image shape
-    print(lenna.img)
+    print(lenna.shape)
 
 
 def convert_to_greyscale():
